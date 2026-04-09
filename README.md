@@ -1,8 +1,8 @@
 # Sistema de Gestão de Academia
 
-**Desenvolvido por:** Gabriel Zem Muraro
+**Aluno:** Gabriel Zem Muraro
 
-Sistema web completo para gestão de alunos de uma academia, com operações de CRUD (Create, Read, Update, Delete).
+CRUD de academia
 
 ## Tecnologias Utilizadas
 
