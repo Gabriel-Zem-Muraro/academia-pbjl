@@ -25,7 +25,7 @@ CRUD de academia
 ```bash
 cd backend
 npm install
-npm start
+npm run dev
 ```
 
 O servidor inicia em **http://localhost:3001**.
