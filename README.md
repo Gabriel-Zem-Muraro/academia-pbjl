@@ -30,7 +30,7 @@ npm start
 
 O servidor inicia em **http://localhost:3001**.
 
-> **Nota:** Se a senha do seu MySQL não for vazia, edite `backend/src/config/db.js` e altere o campo `password`.
+> **Nota:** Edite o arquivo `backend/src/config/db.js` e altere o campo `password` para a senha do seu MySQL.
 
 ### 3. Frontend
 
@@ -41,6 +41,45 @@ npm start
 ```
 
 A aplicação abre em **http://localhost:3000**.
+
+## Estrutura do Projeto
+
+```
+academia-pbjl/
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js                 # Conexão com o MySQL
+│   │   ├── controllers/
+│   │   │   └── alunoController.js    # Lógica das rotas (CRUD)
+│   │   ├── middlewares/
+│   │   │   └── validations.js        # Validações de entrada
+│   │   ├── routes/
+│   │   │   └── alunoRoutes.js        # Definição das rotas da API
+│   │   └── server.js                 # Ponto de entrada do backend
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AlunoForm.js          # Formulário reutilizável
+│   │   │   ├── ConfirmModal.js       # Modal de confirmação
+│   │   │   └── Layout.js             # Layout principal
+│   │   ├── pages/
+│   │   │   ├── CadastroAluno.js      # Página de cadastro
+│   │   │   ├── DetalhesAluno.js      # Página de detalhes
+│   │   │   ├── EditarAluno.js        # Página de edição
+│   │   │   └── ListaAlunos.js        # Página principal (listagem)
+│   │   ├── services/
+│   │   │   └── api.js                # Configuração do Axios
+│   │   ├── App.js                    # Rotas do React
+│   │   ├── index.css                 # Estilos globais (Tailwind)
+│   │   └── index.js                  # Ponto de entrada do frontend
+│   └── package.json
+├── database.sql                      # Script de criação do banco
+└── README.md
+```
 
 ## Funcionalidades
 
@@ -76,3 +115,5 @@ A aplicação abre em **http://localhost:3000**.
 | plano            | ENUM         | Mensal, Trimestral, Semestral, Anual |
 | data_matricula   | DATE         | Data de matrícula na academia        |
 | ativo            | TINYINT(1)   | Status (1 = ativo, 0 = inativo)     |
+| criado_em        | TIMESTAMP    | Data de criação do registro (auto)   |
+| atualizado_em    | TIMESTAMP    | Data da última atualização (auto)    |
